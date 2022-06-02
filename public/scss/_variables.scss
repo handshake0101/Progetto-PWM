@@ -1,0 +1,40 @@
+// define colors
+$accent-dark: #e9af00;
+$accent-second-dark: #c29100;
+
+$accent-light: #dda600;
+$accent-second-light: #b98b00;
+
+// Background colors
+$bg-dark-col: #222;
+$bg-dark-nav: #212529;
+
+$bg-light-col: #F8F9FA;
+$bg-light-nav: #E3E3E3;
+
+// Text colors
+$txt-dark-nav: #EEE;
+$txt-dark-col: #000;
+
+$txt-light-nav: #000;
+$txt-light-col: #000;
+
+// define themes
+html[data-theme="light"] {
+    --bg-col: #{$bg-light-col};
+    --bg-nav: #{$bg-light-nav};
+    --txt-nav: #{$txt-light-nav};
+    --txt-col: #{$txt-light-col};
+    --accent: #{$accent-light};
+    --accent-second: #{$accent-second-light};
+}
+
+html[data-theme="dark"] {
+    --bg-col: #{$bg-dark-col};
+    --bg-nav: #{$bg-dark-nav};
+    --txt-nav: #{$txt-dark-nav};
+    --txt-col: #{$txt-dark-col};
+    --accent: #{$accent-dark};
+    --accent-second: #{$accent-second-dark};
+
+}

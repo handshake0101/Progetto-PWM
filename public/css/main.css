@@ -1,0 +1,62 @@
+html[data-theme="light"] {
+  --bg-col: #F8F9FA;
+  --bg-nav: #E3E3E3;
+  --txt-nav: #000;
+  --txt-col: #000;
+  --accent: #dda600;
+  --accent-second: #b98b00;
+}
+
+html[data-theme="dark"] {
+  --bg-col: #222;
+  --bg-nav: #212529;
+  --txt-nav: #EEE;
+  --txt-col: #000;
+  --accent: #e9af00;
+  --accent-second: #c29100;
+}
+
+nav {
+  background-color: var(--bg-nav);
+  -webkit-transition: background-color .5s;
+  transition: background-color .5s;
+}
+
+nav .container-xl .navbar-brand {
+  color: var(--accent);
+  -webkit-transition: color .5s, font-size .5s;
+  transition: color .5s, font-size .5s;
+}
+
+nav .container-xl .navbar-brand:hover {
+  color: var(--accent-second);
+  font-size: 1.3rem;
+}
+
+nav #navbarNav a {
+  color: var(--txt-nav);
+  -webkit-transition: color .5s;
+  transition: color .5s;
+}
+
+nav #navbarNav a:hover {
+  color: var(--accent-second);
+}
+
+nav #navbarNav li {
+  cursor: pointer;
+}
+
+#carousel .carousel-item {
+  height: calc(100vh - 4rem);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+body {
+  background-color: var(--bg-col);
+  color: var(--txt-col);
+}

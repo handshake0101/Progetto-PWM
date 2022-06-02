@@ -1,0 +1,42 @@
+nav {
+    background-color: var(--bg-nav);
+    transition: background-color .5s;
+
+    .container-xl {
+        .navbar-brand {
+            color: var(--accent);
+            transition: color .5s, font-size .5s;
+
+            &:hover {
+                color: var(--accent-second);
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+    #navbarNav {
+        a {
+            color: var(--txt-nav);
+            transition: color .5s;
+
+
+            &:hover {
+                color: var(--accent-second);
+            }
+        }
+
+        li {
+            cursor: pointer;
+        }
+    }
+}
+
+#carousel {
+    .carousel-item {
+        height: calc(100vh - 4rem);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(90%);
+    }
+}
