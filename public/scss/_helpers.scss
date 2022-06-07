@@ -1,0 +1,24 @@
+/* Copy this @keyframes block to your CSS*/
+@keyframes yourAnimation {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Add the animation: property to whichever element you want to animate */
+.pulse {
+    animation: yourAnimation 1.4s ease 0s infinite normal none;
+    color: var(--bg-nav);
+}
+
+.shadow {
+    box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.6);
+}

@@ -9,3 +9,4 @@ self.addEventListener('message', async event => {
         blob: blob,
     })
 })
+

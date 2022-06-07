@@ -1,0 +1,15 @@
+#overview {
+    .row {
+        .image {
+            background-color: $accent-dark;
+            min-width: 260px;
+            min-height: 260px;
+            max-width: 260px;
+            border-radius: 80px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: brightness(90%);
+        }
+    }
+}

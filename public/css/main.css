@@ -3,54 +3,173 @@ html[data-theme="light"] {
   --bg-nav: #E3E3E3;
   --txt-nav: #000;
   --txt-col: #000;
+  --txt-col2: #272727;
   --accent: #dda600;
-  --accent-second: #b98b00;
+  --accent-secondary: #b98b00;
 }
 
 html[data-theme="dark"] {
   --bg-col: #222;
   --bg-nav: #212529;
   --txt-nav: #EEE;
-  --txt-col: #000;
+  --txt-col: #eeeeee;
+  --txt-col2: #dddddd;
   --accent: #e9af00;
-  --accent-second: #c29100;
+  --accent-secondary: #c29100;
 }
 
-nav {
+/* Copy this @keyframes block to your CSS*/
+@-webkit-keyframes yourAnimation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+@keyframes yourAnimation {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+/* Add the animation: property to whichever element you want to animate */
+.pulse {
+  -webkit-animation: yourAnimation 1.4s ease 0s infinite normal none;
+          animation: yourAnimation 1.4s ease 0s infinite normal none;
+  color: var(--bg-nav);
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.6);
+}
+
+header nav {
   background-color: var(--bg-nav);
   -webkit-transition: background-color .5s;
   transition: background-color .5s;
 }
 
-nav .container-xl .navbar-brand {
+header nav .navbar-toggler:focus,
+header nav .navbar-toggler:active,
+header nav .navbar-toggler-icon:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+header nav .navbar-toggler span {
+  display: block;
+  background-color: var(--txt-nav);
+  height: 3px;
+  width: 25px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  position: relative;
+  left: 0;
+  opacity: 1;
+  border-radius: 2px;
+  -webkit-transition: all 0.35s ease-out;
+  transition: all 0.35s ease-out;
+  -webkit-transform-origin: center left;
+          transform-origin: center left;
+}
+
+header nav .navbar-toggler span span:nth-child(1) {
+  margin-top: 0.3em;
+  -webkit-transform: translate(0%, 0%) rotate(0deg);
+          transform: translate(0%, 0%) rotate(0deg);
+}
+
+header nav .navbar-toggler span span:nth-child(2) {
+  opacity: 1;
+}
+
+header nav .navbar-toggler span span:nth-child(3) {
+  -webkit-transform: translate(0%, 0%) rotate(0deg);
+          transform: translate(0%, 0%) rotate(0deg);
+}
+
+header nav .navbar-toggler:not(.collapsed) span:nth-child(1) {
+  -webkit-transform: translate(15%, -33%) rotate(45deg);
+          transform: translate(15%, -33%) rotate(45deg);
+}
+
+header nav .navbar-toggler:not(.collapsed) span:nth-child(2) {
+  opacity: 0;
+}
+
+header nav .navbar-toggler:not(.collapsed) span:nth-child(3) {
+  -webkit-transform: translate(15%, 33%) rotate(-45deg);
+          transform: translate(15%, 33%) rotate(-45deg);
+}
+
+header nav .container-xl .navbar-brand {
   color: var(--accent);
   -webkit-transition: color .5s, font-size .5s;
   transition: color .5s, font-size .5s;
 }
 
-nav .container-xl .navbar-brand:hover {
-  color: var(--accent-second);
+header nav .container-xl .navbar-brand:hover {
+  color: var(--accent-secondary);
   font-size: 1.3rem;
 }
 
-nav #navbarNav a {
+header nav #navbarContent a {
   color: var(--txt-nav);
   -webkit-transition: color .5s;
   transition: color .5s;
 }
 
-nav #navbarNav a:hover {
-  color: var(--accent-second);
+header nav #navbarContent a:hover {
+  color: var(--accent-secondary);
 }
 
-nav #navbarNav li {
+header nav #navbarContent li {
   cursor: pointer;
 }
 
-#carousel .carousel-item {
-  height: calc(100vh - 4rem);
+header #carousel .carousel-item {
+  height: calc(100vh - 3.4rem);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+}
+
+header #carousel .carousel-item .carousel-caption {
+  max-width: 100%;
+  width: 100%;
+  background-color: var(--accent);
+  opacity: 70%;
+  left: 0;
+}
+
+#overview .row .image {
+  background-color: #e9af00;
+  min-width: 260px;
+  min-height: 260px;
+  max-width: 260px;
+  border-radius: 80px;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
   -webkit-filter: brightness(90%);
           filter: brightness(90%);
@@ -59,4 +178,13 @@ nav #navbarNav li {
 body {
   background-color: var(--bg-col);
   color: var(--txt-col);
+}
+
+section .title {
+  background-color: var(--accent);
+}
+
+section h2,
+section p {
+  color: var(--txt-col2);
 }

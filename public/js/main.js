@@ -16,8 +16,3 @@ ImageLoaderWorker.addEventListener("message", (event) => {
   imageElement.style.backgroundImage = "url(" + objectURL + ")";
   imageElement.removeAttribute("data-src");
 });
-
-// navbar scroll
-$(window).scroll(function(){
-	$('nav').toggleClass('scrolled', $(this).scrollTop() >250);
-});

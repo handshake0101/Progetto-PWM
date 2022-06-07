@@ -1,42 +1,101 @@
-nav {
-    background-color: var(--bg-nav);
-    transition: background-color .5s;
+header {
+    nav {
+        background-color: var(--bg-nav);
+        transition: background-color .5s;
 
-    .container-xl {
-        .navbar-brand {
-            color: var(--accent);
-            transition: color .5s, font-size .5s;
+        .navbar-toggler:focus,
+        .navbar-toggler:active,
+        .navbar-toggler-icon:focus {
+            outline: none;
+            box-shadow: none;
+        }
 
-            &:hover {
-                color: var(--accent-second);
-                font-size: 1.3rem;
+        .navbar-toggler span {
+            display: block;
+            background-color: var(--txt-nav);
+            height: 3px;
+            width: 25px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            position: relative;
+            left: 0;
+            opacity: 1;
+            border-radius: 2px;
+            transition: all 0.35s ease-out;
+            transform-origin: center left;
+
+            span {
+                &:nth-child(1) {
+                    margin-top: 0.3em;
+                    transform: translate(0%, 0%) rotate(0deg);
+                }
+
+                &:nth-child(2) {
+                    opacity: 1;
+                }
+
+                &:nth-child(3) {
+                    transform: translate(0%, 0%) rotate(0deg);
+                }
+            }
+        }
+
+        .navbar-toggler:not(.collapsed) span:nth-child(1) {
+            transform: translate(15%, -33%) rotate(45deg);
+        }
+
+        .navbar-toggler:not(.collapsed) span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .navbar-toggler:not(.collapsed) span:nth-child(3) {
+            transform: translate(15%, 33%) rotate(-45deg);
+        }
+
+        .container-xl {
+            .navbar-brand {
+                color: var(--accent);
+                transition: color .5s, font-size .5s;
+
+                &:hover {
+                    color: var(--accent-secondary);
+                    font-size: 1.3rem;
+                }
+            }
+        }
+
+        #navbarContent {
+
+            a {
+                color: var(--txt-nav);
+                transition: color .5s;
+
+                &:hover {
+                    color: var(--accent-secondary);
+                }
+            }
+
+            li {
+                cursor: pointer;
             }
         }
     }
 
-    #navbarNav {
-        a {
-            color: var(--txt-nav);
-            transition: color .5s;
+    #carousel {
+        .carousel-item {
+            height: calc(100vh - 3.4rem);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(90%);
 
-
-            &:hover {
-                color: var(--accent-second);
+            .carousel-caption {
+                max-width: 100%;
+                width: 100%;
+                background-color: var(--accent);
+                opacity: 70%; /////
+                left: 0;
             }
         }
-
-        li {
-            cursor: pointer;
-        }
-    }
-}
-
-#carousel {
-    .carousel-item {
-        height: calc(100vh - 4rem);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        filter: brightness(90%);
     }
 }
